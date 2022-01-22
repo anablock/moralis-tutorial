@@ -48,6 +48,7 @@ async function logOut() {
 
 Moralis.Cloud.define('getItems', async (request) => {
     const query = new Moralis.Query('Item');
+    const results = await query.find();
 });
 
 document.getElementById("btn-login").onclick = login;
