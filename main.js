@@ -1,4 +1,4 @@
-/* Moralis init code - */
+/* Moralis init code */
 const serverUrl = "https://nmamgu2cjaat.usemoralis.com:2053/server";
 const appId = "pDj5JIBr9krM14yR5463zuby4J48S6NJ3pRsEfxP";
 Moralis.start({ serverUrl, appId });
