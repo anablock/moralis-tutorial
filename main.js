@@ -1,4 +1,4 @@
-/* Moralis init code */
+/* Moralis init code - */
 const serverUrl = "https://nmamgu2cjaat.usemoralis.com:2053/server";
 const appId = "pDj5JIBr9krM14yR5463zuby4J48S6NJ3pRsEfxP";
 Moralis.start({ serverUrl, appId });
@@ -13,7 +13,6 @@ signUp = async (email, password) => {
         const file = btnAvatar.files[0];
         const fileName = 'avatar.jpg';
         const avatarFile = new Moralis.File(FileName, file);
-        
         /** object.set('variable_name', value); */
         user.set('avatar', avatarFile);
     }
@@ -29,9 +28,11 @@ signUp = async (email, password) => {
 /* Add Moralis Authentication code */
 async function login() {
     let user = Moralis.User.current();
+    moralis.cloud.call
     if (!user) {
         user = await Moralis.authenticate({ signingMessage: "Log in using Moralis" })
             .then(function (user) {
+
                 console.log("logged in user:", user);
                 console.log(user.get("ethAddress"));
             })
@@ -49,6 +50,7 @@ async function logOut() {
 Moralis.Cloud.define('getItems', async (request) => {
     const query = new Moralis.Query('Item');
     const results = await query.find();
+    return results;
 });
 
 document.getElementById("btn-login").onclick = login;
