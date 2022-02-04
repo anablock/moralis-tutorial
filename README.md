@@ -34,7 +34,17 @@
     </head>
 
     <body>
-        
+        <h1>Moralis Login</h1>
+        <button onclick="login()" id="login">Login</button>
+        <script>
+            const serverUrl="";
+            const appId="";
+            Moralis.start({ serverUrl, appId });
+
+            async function login() {
+                await Moralis.authenticate()
+            }
+        </script>
     </body>
 </html>
 ```
